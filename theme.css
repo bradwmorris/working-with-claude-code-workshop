@@ -1,0 +1,380 @@
+/* @theme rah-terminal */
+
+@import 'default';
+
+/* Import Geist Mono — single font, terminal vibes, consistent everywhere */
+@import url('https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono/index.css');
+
+:root {
+  --color-bg: #0a0a0a;
+  --color-fg: #e5e5e5;
+  --color-accent: #52d97a;
+  --color-accent-dim: #2a2a2a;
+  --color-code-bg: #0f0f0f;
+  --color-border: #2a2a2a;
+  --color-muted: #6b6b6b;
+  --font: 'Geist Mono', 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+}
+
+/* ── Base ── */
+
+section {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font);
+  font-size: 26px;
+  line-height: 1.6;
+  padding: 60px 80px;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Headings — all mono, all green ── */
+
+section h1 {
+  color: var(--color-accent);
+  font-family: var(--font);
+  font-size: 52px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 12px;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+section h2 {
+  color: var(--color-accent);
+  font-family: var(--font);
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+section h3 {
+  color: var(--color-accent);
+  font-family: var(--font);
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* ── Body text ── */
+
+section p {
+  color: var(--color-fg);
+  font-size: 26px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+section li {
+  color: var(--color-fg);
+}
+
+section strong {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+section em {
+  color: var(--color-fg);
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* ── Lists ── */
+
+section ul,
+section ol {
+  margin-left: 0;
+  padding-left: 1.5em;
+}
+
+section ul li,
+section ol li {
+  margin-bottom: 10px;
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+section ul li::marker {
+  color: var(--color-accent);
+  content: '> ';
+}
+
+section ol li::marker {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ── Code ── */
+
+section pre {
+  background: var(--color-code-bg);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 2px;
+  padding: 24px;
+  margin: 16px 0;
+  font-family: var(--font);
+}
+
+section pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 20px;
+  color: var(--color-accent);
+  font-family: var(--font);
+  display: block;
+  line-height: 1.6;
+}
+
+section code:not(pre code) {
+  background: var(--color-code-bg);
+  color: var(--color-accent);
+  font-family: var(--font);
+  font-size: 0.9em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  border: 1px solid var(--color-border);
+}
+
+/* ── Blockquotes ── */
+
+section blockquote {
+  border-left: 4px solid var(--color-accent);
+  background: rgba(82, 217, 122, 0.05);
+  padding: 16px 24px;
+  margin: 24px 0;
+  border-radius: 0 2px 2px 0;
+}
+
+section blockquote p {
+  color: var(--color-fg);
+  font-size: 24px;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+/* ── Images ── */
+
+section img {
+  border-radius: 2px;
+}
+
+/* ── Links ── */
+
+section a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(82, 217, 122, 0.4);
+  text-underline-offset: 4px;
+}
+
+/* ── Tables ── */
+
+section table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+}
+
+section table th {
+  background: #0a0a0a !important;
+  color: #52d97a !important;
+  font-weight: 600;
+  padding: 12px 16px;
+  border: 1px solid #2a2a2a !important;
+  text-align: left;
+}
+
+section table td {
+  padding: 10px 16px;
+  background: #0a0a0a !important;
+  border: 1px solid #2a2a2a !important;
+  color: #e5e5e5 !important;
+}
+
+section table tr:nth-child(even) td {
+  background: #111111 !important;
+}
+
+/* ── Footer / page number ── */
+
+section::after {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+/* ── Lead slides (section headers) ── */
+
+section.lead {
+  text-align: center;
+  justify-content: center;
+}
+
+section.lead h1 {
+  font-size: 60px;
+  border-bottom: none;
+  padding-bottom: 0;
+  letter-spacing: -0.025em;
+}
+
+section.lead p {
+  font-size: 24px;
+  color: var(--color-fg);
+  opacity: 0.6;
+}
+
+/* ══════════════════════════════════════════
+   QUESTION SLIDES
+   Big ? mark, clean white text, terminal bg
+   ══════════════════════════════════════════ */
+
+section.question {
+  background: var(--color-bg);
+  padding: 80px 100px;
+  font-family: var(--font);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Giant question mark watermark */
+section.question::before {
+  content: '?';
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 400px;
+  font-family: var(--font);
+  font-weight: 700;
+  color: var(--color-accent);
+  opacity: 0.08;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Kill page number on question slides */
+section.question::after {
+  display: none;
+}
+
+/* Hide any h2 on question slides */
+section.question h2 {
+  display: none;
+}
+
+/* Question text — big, white, impossible to miss */
+section.question pre,
+section.question pre[class*="language"] {
+  background: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+section.question pre code,
+section.question pre code span,
+section.question pre code[class*="language"],
+section.question pre[class*="language"] code {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #ffffff !important;
+  font-size: 64px !important;
+  font-family: var(--font) !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+  white-space: pre-wrap !important;
+  display: block;
+  text-shadow: none !important;
+}
+
+section.question p {
+  color: #ffffff !important;
+  font-family: var(--font) !important;
+  font-size: 48px !important;
+  font-weight: 600 !important;
+  line-height: 1.8 !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Invert class ── */
+
+section.invert {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+section.invert h1,
+section.invert h2 {
+  color: var(--color-bg);
+  border-bottom-color: var(--color-bg);
+}
+
+/* ── Utilities ── */
+
+section .small {
+  font-size: 18px;
+  color: var(--color-muted);
+}
+
+section .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ── Terminal cursor blink ── */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+section .cursor {
+  display: inline-block;
+  width: 12px;
+  height: 28px;
+  background: var(--color-accent);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* ── Example text for question slides ── */
+
+section.question .example {
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-size: 24px;
+  margin-top: 40px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* ── Highlight class ── */
+
+section .highlight {
+  color: var(--color-accent);
+  font-size: 1.2em;
+  font-weight: 700;
+  display: inline-block;
+  padding: 4px 8px;
+  background: rgba(82, 217, 122, 0.1);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 12px;
+}
